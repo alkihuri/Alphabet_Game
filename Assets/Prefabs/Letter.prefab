@@ -48,10 +48,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2.25
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.1
+  m_GravityScale: 0.35
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -312,6 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLetter: {fileID: 4972124551515759597}
+  sprite: {fileID: 5492609306291889475}
   ps: {fileID: 6674771727628432110, guid: f20a7e37a51c5ab4fa857263ea9cb768, type: 3}
 --- !u!1 &8227002206470974951
 GameObject:

@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class LetterController : MonoBehaviour
 {
-    public Text currentLetter; 
+    public Text currentLetter;
+    public GameObject sprite;
     // Start is called before the first frame update
     void Start()
     {
-        
+        sprite.GetComponent<Renderer>().material.color = Random.ColorHSV();
+        currentLetter.color = new Color(255 - sprite.GetComponent<Renderer>().material.color.r, 255 - sprite.GetComponent<Renderer>().material.color.g, 255 - sprite.GetComponent<Renderer>().material.color.b);
     }
     public void OnClickLetter()
     {

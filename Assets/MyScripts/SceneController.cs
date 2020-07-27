@@ -9,7 +9,7 @@ public class SceneController : MonoBehaviour
     {
         if(name == "Start" || name == "Game")
         {
-            GameStates.score = 0; 
+            GameStates.mood = GameStates.maximumMood; 
         }
         SceneManager.LoadScene(name);
     }
