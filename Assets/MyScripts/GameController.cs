@@ -22,8 +22,14 @@ public class GameController : MonoBehaviour
         if (collision.transform.gameObject.GetComponentInChildren<LetterController>().currentLetter.text == GameStates.letterToGuess)
         {
             Debug.Log("Looser");
-            SceneManager.LoadScene("Finish");
-
+            if (GameStates.mood > 0)
+            {
+                GameStates.mood--;
+            }
+            if(GameStates.mood == 0)
+            {
+                SceneManager.LoadScene("Finish");
+            }
         }
         Destroy(collision.transform.gameObject);
     }

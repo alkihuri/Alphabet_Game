@@ -25,6 +25,11 @@ public class LetterController : MonoBehaviour
             Camera.main.GetComponent<CameraController>().ShakeCamera();
         }
     }
+    public ParticleSystem ps;
+    private void OnDestroy()
+    {
+        Instantiate(ps, transform.position, transform.rotation);
+    }
     // Update is called once per frame
     void Update()
     {
