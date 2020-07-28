@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterController : MonoBehaviour
 {
@@ -14,6 +15,13 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        animator.SetFloat("Mood", GameStates.mood / GameStates.maximumMood);
+        if(SceneManager.GetActiveScene().name == "Game")
+        {
+            animator.SetFloat("Mood", GameStates.mood / GameStates.maximumMood);
+        }
+        if(SceneManager.GetActiveScene().name == "StudyModeGame")
+        {
+            animator.SetFloat("Mood", GameStates.studyModeNumOfGuesses / GameStates.studyModeMaximumNumOfGuesses);
+        }
     }
 }
