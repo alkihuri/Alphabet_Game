@@ -7,29 +7,48 @@ using UnityEngine.UI;
 
 public class StudyModeLettersController : MonoBehaviour
 {
+
+    
+
+
     List<Text> letters;
     // Start is called before the first frame update
     void Start()
     {
         GameStates.mood = GameStates.maximumMood;
+        GameStates.studyModeNumOfGuesses = 0;
         letters = GetComponentsInChildren<Text>().ToList();
     }
-    IEnumerator GoToSelectScene()
+    IEnumerator GoNextLevel()
     {
         foreach (GameObject go in GameObject.FindGameObjectsWithTag("Letter"))
         {
             Destroy(go);
         }
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("SelectLetter");
-        Progress.passedLetters.Add(GameStates.letterToStudy);
+        if (SceneManager.GetActiveScene().name == "StudyModeGame")
+        {
+            GameStates.level=2;
+            SceneManager.LoadScene("StudyModeGame_2");
+        }
+        if (SceneManager.GetActiveScene().name == "StudyModeGame_2")
+        {
+            GameStates.level=3;
+            SceneManager.LoadScene("StudyModeGame_3");
+        }
+        if (SceneManager.GetActiveScene().name == "StudyModeGame_3")
+        {
+            GameStates.level =1 ;
+            Progress.passedLetters.Add(GameStates.letterToStudy);
+            SceneManager.LoadScene("SelectLetter");
+        }
     }
     // Update is called once per frame
     void Update()
     {
         if(GameStates.studyModeNumOfGuesses >= letters.Count -1)
         {
-            StartCoroutine(GoToSelectScene());
+            StartCoroutine(GoNextLevel());
         }
         if(GameStates.mood < 1)
         {
@@ -41,11 +60,14 @@ public class StudyModeLettersController : MonoBehaviour
             letters[i].text = GameStates.letterToStudy;
             if(i < GameStates.studyModeNumOfGuesses )
             {
+
                 letters[i].color = Color.green;
             }
             else
             {
-                letters[i].color = Color.gray; 
+                letters[i].color = Color.gray;
+                if (SceneManager.GetActiveScene().name == "StudyModeGame_3")
+                    letters[i].text = "*";
             }
         }
     }

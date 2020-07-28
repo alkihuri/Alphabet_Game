@@ -13,10 +13,7 @@ public class SelectButtonController : MonoBehaviour
     public void SetLetterToStudyMode()
     {
         GameStates.letterToStudy = GetComponentInChildren<Text>().text; 
-        if(Progress.passedLetters.Contains(GameStates.letterToStudy))
-        {
-             //// Если буква / кнопка пройдена....
-        }
+         
         SceneManager.LoadScene("StudyModeGame");
     }
 }
