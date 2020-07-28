@@ -12,9 +12,14 @@ public static class  GameStates
     public static float  mood = maximumMood;
     internal static bool studyModeIsOn = true;
 
+    public static bool hardMode = true;
+    public static float gravityOfLetters = 1;
+
+
     public static string letterToStudy;
     public  static int studyModeNumOfGuesses =0 ;
     internal static int studyModeMaximumNumOfGuesses = 4;
+   
 
     public static void SetLetterToGuess()
     {

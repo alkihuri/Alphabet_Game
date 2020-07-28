@@ -27,6 +27,10 @@ public class SelectLetterManager : MonoBehaviour
         {
             GameObject newOne = Instantiate(buttonToSet, new Vector3(j * Camera.main.pixelWidth/3 , -(offset * (i + 1)), 0), Quaternion.identity, scrollViewContent.transform);
             newOne.GetComponentInChildren<Text>().text = GameStates.russianAlphabet.Split(',')[i+j +1 + (i*2)].ToString() ;
+            if(Progress.passedLetters.Contains(newOne.GetComponentInChildren<Text>().text))
+            {
+                newOne.GetComponent<Image>().color = Color.green;
+            }
         }
 
     }
