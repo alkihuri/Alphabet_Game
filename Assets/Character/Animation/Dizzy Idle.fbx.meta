@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: befde043bca5efe45bece6cfb2e68f22
+guid: 9870974f27980584c8e232e35f7b5c64
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -119,7 +119,7 @@ ModelImporter:
     400110: mixamorig:Spine
     400112: mixamorig:Spine1
     400114: mixamorig:Spine2
-    7400000: Angry
+    7400000: DizzliYdle
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -150,10 +150,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Angry
+      name: DizzliYdle
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 575
+      lastFrame: 128
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

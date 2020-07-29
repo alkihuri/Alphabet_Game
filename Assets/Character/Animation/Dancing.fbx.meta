@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c808d4cf78f0cfd4396fef059ce9a073
+guid: d58f169832bbb8f4fa9157d3bcefea00
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -119,7 +119,7 @@ ModelImporter:
     400110: mixamorig:Spine
     400112: mixamorig:Spine1
     400114: mixamorig:Spine2
-    7400000: Crying
+    7400000: Dancing_1
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -150,10 +150,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Crying
+      name: Dancing_1
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 188
+      lastFrame: 642
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

@@ -40,7 +40,8 @@ public class StudyModeLettersController : MonoBehaviour
         {
             GameStates.level =1 ;
             Progress.passedLetters.Add(GameStates.letterToStudy);
-            SceneManager.LoadScene("SelectLetter");
+            Debug.Log("Буква" + GameStates.letterToStudy + "Добавлена");
+            SceneManager.LoadScene("StudyModeFinish");
         }
     }
     // Update is called once per frame

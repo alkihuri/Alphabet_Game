@@ -4,8 +4,8 @@ using UnityEngine;
 
 public static class  GameStates  
 { 
-    public static string russianAlphabet = "а,б,в,г,д,е,ё,ж,з,и,й,к,л,м,н,о,п,р,с,т,у,ф,х,ц,ч,ш,щ,ъ,ы,ь,э,ю,я";
-    public static string letterToGuess = "a";
+    public static string russianAlphabet = "А,Б,В,Г,Д,Е,Ё,Ж,З,И,Й,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Ч,Ц,Ч,Ш,Щ,Ъ,Ы,Ь,Э,Ю,Я";
+    public static string letterToGuess = "А";
     public static int score = 0;
     public static int turn = 0;
     public static float  maximumMood = 3; 
@@ -18,7 +18,7 @@ public static class  GameStates
     public static float gravityOfLetters = 0.2f;
 
 
-    public static string letterToStudy ="a";
+    public static string letterToStudy ="A";
     public  static int studyModeNumOfGuesses =0 ;
     internal static int studyModeMaximumNumOfGuesses = 4;
    

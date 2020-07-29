@@ -10,7 +10,7 @@ public class SettingsSetOn : MonoBehaviour
     private void Start()
     {
         hardModeTogle.isOn = GameStates.hardMode;
-        gravity.value = GameStates.gravityOfLetters/ 0.09f;
+        gravity.value = GameStates.gravityOfLetters/ 0.15f;
     }
     public void SetHardModeValue()
     {
@@ -18,6 +18,6 @@ public class SettingsSetOn : MonoBehaviour
     }
     public void SetLettersSpeed()
     {
-        GameStates.gravityOfLetters = gravity.value * 0.09f;
+        GameStates.gravityOfLetters = gravity.value * 0.15f;
     }
 }

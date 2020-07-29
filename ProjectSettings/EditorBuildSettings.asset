@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StudyModeGame_3.unity
     guid: 75c9bd19fef05db4fad233955fb1e8bf
   - enabled: 1
+    path: Assets/Scenes/StudyModeFinish.unity
+    guid: 0bed6653c2fba4447a1728548a6b9cb2
+  - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: 39a49daa8fc3f3d41adcb0e133aee3af
   m_configObjects: {}
