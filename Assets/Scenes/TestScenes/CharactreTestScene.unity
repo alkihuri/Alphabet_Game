@@ -133,6 +133,9 @@ MonoBehaviour:
   animator: {fileID: 0}
   mouseIsHappy: 0
   mouseIsSad: 0
+  mouseIsIdle: 0
+  happySound: {fileID: 0}
+  sadSoud: {fileID: 0}
 --- !u!1001 &91682735
 PrefabInstance:
   m_ObjectHideFlags: 0

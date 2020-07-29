@@ -66,7 +66,13 @@ public class LetterController : MonoBehaviour
     private void OnDestroy()
     {
         if(currentLetter.text != GameStates.letterToStudy)
+        {
             Instantiate(notCorrectLetterClick_Particles, transform.position, transform.rotation);
+        }
+        else
+        {
+            Instantiate(correctLetterClick_Particles, transform.position, transform.rotation);
+        }
     }
     // Update is called once per frame
     void Update()

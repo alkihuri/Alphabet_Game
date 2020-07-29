@@ -22,6 +22,13 @@ public class SceneController : MonoBehaviour
         }
          
     }
+    private void OnDestroy()
+    {
+        foreach(ParticleSystem ps in GameObject.FindObjectsOfType<ParticleSystem>())
+        {
+            Destroy(ps);
+        }
+    }
     public void ChangeScene(string name)
     {
         if(name == "Start" || name == "Game")

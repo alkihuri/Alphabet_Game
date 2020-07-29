@@ -30,7 +30,10 @@ public class StudyModeSceneController : MonoBehaviour
             GameObject newOne = Instantiate(letter, positions[Random.Range(0,positions.Length)].position, Quaternion.identity);
             newOne.GetComponentInChildren<Text>().text = GameStates.letterToStudy;
             if (SceneManager.GetActiveScene().name == "StudyModeGame")
+            {
+
                 newOne.GetComponentInChildren<LetterController>().sprite.GetComponent<SpriteRenderer>().color = Color.green;
+            }
             newOne.GetComponent<Rigidbody2D>().gravityScale = GameStates.gravityOfLetters + transform.position.y /8 * transform.position.y / 8;
         }
     }
@@ -49,6 +52,7 @@ public class StudyModeSceneController : MonoBehaviour
     {
         if (collision.gameObject.GetComponentInChildren<LetterController>().currentLetter.text.Equals(GameStates.letterToStudy))
         { 
+            GameObject.FindObjectOfType<CharacterController>().mouseIsSad = true;
             GameStates.mood--;
         }
         Destroy(collision.gameObject);

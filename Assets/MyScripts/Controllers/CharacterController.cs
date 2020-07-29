@@ -15,8 +15,7 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
-        animator = GetComponent<Animator>();
+         
     }
     private void LateUpdate()
     {
@@ -30,10 +29,12 @@ public class CharacterController : MonoBehaviour
 
         if (mouseIsSad)
         {
+            sadSoud.Play();
             animator.SetTrigger("Sad");
         }
         if (mouseIsHappy)
         {
+            happySound.Play();
             animator.SetTrigger("Happy");
         }
         if(mouseIsIdle)
