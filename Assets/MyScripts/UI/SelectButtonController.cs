@@ -12,8 +12,8 @@ public class SelectButtonController : MonoBehaviour
     }
     public void SetLetterToStudyMode()
     {
-        GameStates.letterToStudy = GetComponentInChildren<Text>().text; 
+        GameStates.letterToStudy = GetComponentInChildren<Text>().text.Trim() ; 
          
-        SceneManager.LoadScene("StudyModeGame");
+        SceneManager.LoadScene("Intro");
     }
 }

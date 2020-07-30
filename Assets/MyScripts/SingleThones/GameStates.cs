@@ -18,7 +18,7 @@ public static class  GameStates
     public static float gravityOfLetters = 0.2f;
 
 
-    public static string letterToStudy ="A";
+    public static string letterToStudy ="А";
     public  static int studyModeNumOfGuesses =0 ;
     internal static int studyModeMaximumNumOfGuesses = 4;
    

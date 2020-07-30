@@ -68,7 +68,7 @@ public class StudyModeLettersController : MonoBehaviour
             {
                 letters[i].color = Color.gray;
                 if (SceneManager.GetActiveScene().name == "StudyModeGame_3")
-                    letters[i].text = "*";
+                    letters[i].text = "?";
             }
         }
     }
