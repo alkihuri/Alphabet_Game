@@ -53,7 +53,7 @@ public class StudyModeLettersController : MonoBehaviour
         }
         if(GameStates.mood < 1)
         {
-            SceneManager.LoadScene("SelectLetter");
+            SceneManager.LoadScene("BadFinish");
         }
 
         for(int i=0;i< letters.Count; i++)

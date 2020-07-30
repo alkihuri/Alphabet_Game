@@ -7,8 +7,8 @@ using UnityEngine;
 [System.Serializable]
 public static class Progress  
 {
-   public static List<string> passedLetters = new List<string>(); 
-    
+   public static List<string> passedLetters = new List<string>();
+    public static List<string> passedMissions = new List<string>();
 
 
     public static void  LoadData()

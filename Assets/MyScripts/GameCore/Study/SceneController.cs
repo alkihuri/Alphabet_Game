@@ -9,9 +9,8 @@ public class SceneController : MonoBehaviour
     private void Start()
     {
         string scene = SceneManager.GetActiveScene().name;
-
-
-        switch(scene)
+         
+        switch (scene)
         {
             case "Start": GameStates.level = 0;  break;
             case "StudyModeGame": GameStates.level = 1; break;
