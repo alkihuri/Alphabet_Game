@@ -21,7 +21,7 @@ public class LetterManager : MonoBehaviour
         {
             yield return new WaitForSeconds(0.9f);
             GameObject newOne = Instantiate(letterExample, transform.position + new Vector3(Random.Range(-2.5f, 2), 0, 0), Quaternion.identity);
-            newOne.GetComponentInChildren<Text>().text = GameStates.russianAlphabet.Split(',')[Random.Range(0 + GameStates.turn, GameStates.turn + 3)];
+            newOne.GetComponentInChildren<Text>().text = GameStates.main_alphabet.Split(',')[Random.Range(0 + GameStates.turn, GameStates.turn + 3)];
         }
     }
 }

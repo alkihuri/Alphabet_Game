@@ -5,7 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-
+    private void OnLevelWasLoaded(int level)
+    {
+        foreach (ParticleSystem ps in GameObject.FindObjectsOfType<ParticleSystem>())
+        {
+            Destroy(ps);
+        }
+    }
     private void Start()
     {
         string scene = SceneManager.GetActiveScene().name;

@@ -18,7 +18,7 @@ public class LetterMissionController : MonoBehaviour
         //s sprite.GetComponent<Renderer>().material.color = Random.ColorHSV();
         // currentLetter.color = new Color(255 - sprite.GetComponent<Renderer>().material.color.r, 255 - sprite.GetComponent<Renderer>().material.color.g, 255 - sprite.GetComponent<Renderer>().material.color.b);
     }
-
+ 
     public void OnClickLetter()
     { 
 
@@ -26,9 +26,12 @@ public class LetterMissionController : MonoBehaviour
         if (SceneManager.GetActiveScene().name.Contains("Mission"))
         {
 
-
-            if (GameStates.currentMission.Contains(currentLetter.text))
+            if(GameStates.currentMissionLetterIndex<GameStates.currentMission.Length)
+            if (GameStates.currentMission[GameStates.currentMissionLetterIndex].ToString().Contains(currentLetter.text))
             {
+                    GameObject.FindObjectOfType<MissionWordSet>().lettersToGuess[GameStates.currentMissionLetterIndex].GetComponent<PartOfwordLetterController>().isGuessed = true;
+                GameStates.currentMissionLetterIndex++;
+                Debug.Log(GameStates.currentMissionLetterIndex);
                 Destroy(GetComponentInParent<Rigidbody2D>());
                 Destroy(GetComponentInParent<BoxCollider2D>());
                 if(!GameStates.missionModeGuesedLetter.Contains(currentLetter.text))
@@ -42,7 +45,7 @@ public class LetterMissionController : MonoBehaviour
                 StartCoroutine(DelayDestroy());
                 FindObjectOfType<CharacterController>().mouseIsHappy = true;
             }
-            else if (!GameStates.currentMission.Contains(currentLetter.text))
+            else if (!GameStates.currentMission[GameStates.currentMissionLetterIndex].ToString().Contains(currentLetter.text))
             {
                 GameStates.missionWrongTaps++;
                 notCorrectClickSound.Play();

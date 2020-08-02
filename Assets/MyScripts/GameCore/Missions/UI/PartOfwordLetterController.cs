@@ -16,15 +16,7 @@ public class PartOfwordLetterController : MonoBehaviour
     }
     // Update is called once per frame
     void Update()
-    {
-
-        if(GameStates.missionModeGuesedLetter.Contains(letterValue))
-        { 
-            isGuessed = true;
-        }
-
-        
-
+    { 
         if(isGuessed)
         {
             GetComponent<Text>().color = Color.green; 
