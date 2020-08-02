@@ -20,11 +20,7 @@ public class MissionSceneController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-         
-    }
+     
 
     private void SetMissionOnScrollView(string value, int i)
     {

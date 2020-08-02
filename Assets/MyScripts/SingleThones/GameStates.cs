@@ -27,17 +27,19 @@ public static class  GameStates
     public  static bool isMissionModeOn = true; 
     public  static  List<string> missionModeGuesedLetter = new List<string>();
     public static int numOfMissionModeGuesedLetter = 0;
-
-
+    public static string currentAlphabet = "RUS";
+    public static string [] availaibleAlphabets = { "RUS", "AVR" };
     public static void SetAvarianAlphabetAndMissions()
     {
-        main_alphabet = "А,Б,В,Г,Д,Е,Ё,Ж,З,И,Й,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Ч,Ц,Ч,Ш,Щ,Ъ,Ы,Ь,Э,Ю,Я,I";
+        main_alphabet = "А,Б,В,Г,Гъ,Гь,ГI,Д,Е,Ё,Ж,З,И,Й,К,КI,Къ,Кь,Л,Лъ,М,Н,О,П,Р,С,Т,ТI,У,Ф,Ч,ЧI,Ц,X,XI,Xь,Xъ,ЦI,Ш,Щ,Ъ,Ы,Ь,Э,Ю,Я";
         main_missons = "ЭБЕЛ,ЭМЕН,ГЪВЕТI,КЬО";
+        currentAlphabet = "AVR";
     }
     public static void SetRussianAlphabetAndMissions()
     {
-        main_alphabet = "А,Б,В,Г,Д,Е,Ё,Ж,З,И,Й,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Ч,Ц,Ч,Ш,Щ,Ъ,Ы,Ь,Э,Ю,Я";
+        main_alphabet = "А,Б,В,Г,Д,Е,Ё,Ж,З,И,Й,К,Л,М,Н,О,П,Р,С,Т,У,Ф,X,Ч,Ц,Ш,Щ,Ъ,Ы,Ь,Э,Ю,Я";
         main_missons = "МАМА,ПАПА,КУСТ,МОСТ";
+        currentAlphabet = "RUS";
     }
 
     public static void SetLetterToGuess()
