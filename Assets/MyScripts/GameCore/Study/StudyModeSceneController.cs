@@ -25,7 +25,7 @@ public class StudyModeSceneController : MonoBehaviour
     {
         while (GameStates.studyModeIsOn == true)
         {
-            yield return new WaitForSeconds(3.2f);
+            yield return new WaitForSeconds(3f);
             ///transform.position + new Vector3(Random.Range(-randomRange, randomRange)
             GameObject newOne = Instantiate(letter, positions[Random.Range(0,positions.Length)].position, Quaternion.identity);
             newOne.GetComponentInChildren<Text>().text = GameStates.letterToStudy;
@@ -34,20 +34,18 @@ public class StudyModeSceneController : MonoBehaviour
 
                 newOne.GetComponentInChildren<LetterController>().sprite.GetComponent<SpriteRenderer>().color = Color.green;
             }
-            newOne.GetComponent<Rigidbody2D>().gravityScale = GameStates.gravityOfLetters ;
-           
+            newOne.GetComponent<Rigidbody2D>().gravityScale = GameStates.gravityOfLetters + transform.position.y /8 * transform.position.y / 8;
         }
     }
     IEnumerator SpawnRandon()
     {
        while(GameStates.studyModeIsOn == true)
         {
-           
+            yield return new WaitForSeconds(3.1f);
             ///transform.position + new Vector3(Random.Range(-2.5f, 2)
             GameObject newOne = Instantiate(letter, positions[Random.Range(0, positions.Length)].position, Quaternion.identity);
-            newOne.GetComponentInChildren<Text>().text = GameStates.main_alphabet.Replace(GameStates.letterToStudy + ",","").Split(',')[Random.Range(0, GameStates.main_alphabet.Length/2-1)];
-            newOne.GetComponent<Rigidbody2D>().gravityScale = GameStates.gravityOfLetters;
-            yield return new WaitForSeconds(2.5f);
+            newOne.GetComponentInChildren<Text>().text = GameStates.main_alphabet.Replace(GameStates.letterToStudy,"").Split(',')[Random.Range(0, GameStates.main_alphabet.Length/2-1)];
+            newOne.GetComponent<Rigidbody2D>().gravityScale = GameStates.gravityOfLetters + transform.position.y / 8 * transform.position.y / 8;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

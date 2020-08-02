@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class MissionSelectButtonController : MonoBehaviour
 {
     public string missionName;
-    public Image missionSprite;
     public void StartMission()
     {
         GameStates.currentMission = missionName;
@@ -32,8 +31,6 @@ public class MissionSelectButtonController : MonoBehaviour
             }
        
         GetComponent<Button>().interactable = cheker;
-        missionSprite.sprite = Resources.Load<Sprite>("Missions/Sprites/" + missionName)as Sprite;
     }
  
-     
 }

@@ -13,7 +13,6 @@ public class MissionController : MonoBehaviour
     {
         GameStates.numOfMissionModeGuesedLetter = 0;
         GameStates.missionModeGuesedLetter.Clear();
-        GameStates.currentMissionLetterIndex = 0;
         GameStates.missionWrongTaps = 0;
         StartCoroutine(SpawnCorrect());
         StartCoroutine(SpawnRandom());
@@ -21,7 +20,7 @@ public class MissionController : MonoBehaviour
     private void Update()
     {
         GameStates.numOfMissionModeGuesedLetter = GameObject.FindObjectsOfType<PartOfwordLetterController>().ToList().Where(o => o.isGuessed == false).ToList().Count;
-        
+        Debug.Log(GameStates.numOfMissionModeGuesedLetter);
         if (GameStates.numOfMissionModeGuesedLetter == 0)
         {
             Debug.Log("Huraaaaah");

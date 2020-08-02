@@ -12,26 +12,14 @@ public class LetterController : MonoBehaviour
     public AudioSource correctClickSound;
     public AudioSource notCorrectClickSound;
     public AudioSource destoroyLetter;
-    float startY;
     // Start is called before the first frame update
     void Start()
     {
-       
         letterValue = currentLetter.text;
        //s sprite.GetComponent<Renderer>().material.color = Random.ColorHSV();
        // currentLetter.color = new Color(255 - sprite.GetComponent<Renderer>().material.color.r, 255 - sprite.GetComponent<Renderer>().material.color.g, 255 - sprite.GetComponent<Renderer>().material.color.b);
     }
-    /*
-    private void Update()
-    {
-
-        startY = 1;// transform.position.y ;
-
-        if (startY < 5.1)
-            startY = 1;
-        GetComponentInParent<Rigidbody2D>().gravityScale = startY ;
-    }
-    */
+     
     public void OnClickLetter()
     {
         //Debug.Log(currentLetter.text + " is Pressed");

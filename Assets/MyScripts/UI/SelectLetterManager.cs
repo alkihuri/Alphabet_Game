@@ -18,35 +18,38 @@ public class SelectLetterManager : MonoBehaviour
             PutLetterOnScreen(i);
         }
     }
-    
+
     private void PutLetterOnScreen(int i)
     {
-         
-         
-        for(int j=-1;j<2  ;j++)
+
+
+        for (int j = -1; j < 2; j++)
         {
+
             GameObject newOne = new GameObject();
-            string value = GameStates.main_alphabet.Split(',')[i + j + 1 + (i * 2)].ToString();  
-            if(value != "")
+            string value = GameStates.main_alphabet.Split(',')[i + j + 1 + (i * 2)].ToString();
+            if (value != "")
                 newOne = Instantiate(buttonToSet, new Vector3(j * Camera.main.pixelWidth / 3, -(offset * (i + 1)), 0), Quaternion.identity, scrollViewContent.transform);
-           
+
 
             newOne.GetComponentInChildren<Text>().text = value;
-              
+
             if (Progress.passedLetters.Contains(newOne.GetComponentInChildren<Text>().text.ToString()))
             {
-                newOne.GetComponent<Image>().color = Color.green;
+
+                newOne = Instantiate(buttonToSet, new Vector3(j * Camera.main.pixelWidth / 3, -(offset * (i + 1)), 0), Quaternion.identity, scrollViewContent.transform);
+                newOne.GetComponentInChildren<Text>().text = GameStates.main_alphabet.Split(',')[i + j + 1 + (i * 2)].ToString();
+                if (Progress.passedLetters.Contains(newOne.GetComponentInChildren<Text>().text.ToString()))
+                {
+
+                    newOne.GetComponent<Image>().color = Color.green;
+                }
+
+
             }
-            
-            
+
         }
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
 }

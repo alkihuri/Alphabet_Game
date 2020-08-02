@@ -8,6 +8,7 @@ public class ChangeLanguage : MonoBehaviour
     public Image BtnSprite;
      public void LangChangeClick()
     {
+        /*
         if(GameStates.currentAlphabet == "RUS")
         {
             GameStates.currentAlphabet  = "AVR";
@@ -29,5 +30,6 @@ public class ChangeLanguage : MonoBehaviour
 
         }
         BtnSprite.sprite = Resources.Load<Sprite>("Flags/" + GameStates.currentAlphabet) as Sprite;
+        */
     }
 }

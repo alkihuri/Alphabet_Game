@@ -13,10 +13,10 @@ public class MissionSceneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        offset = missionSelectBtn.GetComponentInChildren<RectTransform>().rect.height;
-        for (int i = 0; i < GameStates.main_missons.Split(',').Length; i++)
+        offset = missionSelectBtn.GetComponentInChildren<RectTransform>().rect.height * 1.2f;
+        for (int i = 0; i < GameStates.missons.Split(',').Length; i++)
         {
-            SetMissionOnScrollView(GameStates.main_missons.Split(',')[i], i);
+            SetMissionOnScrollView(GameStates.missons.Split(',')[i], i);
         }
     }
 
@@ -24,9 +24,8 @@ public class MissionSceneController : MonoBehaviour
 
     private void SetMissionOnScrollView(string value, int i)
     {
-        GameObject newOneBtn = Instantiate(missionSelectBtn, new Vector3(0, -(i+0.5f) * offset, 0), Quaternion.identity, content.transform);
+        GameObject newOneBtn = Instantiate(missionSelectBtn, new Vector3(0, -(i) * offset, 0), Quaternion.identity, content.transform);
         newOneBtn.GetComponentInChildren<Text>().text = value;
         newOneBtn.GetComponent<MissionSelectButtonController>().missionName = value;
-         //// для динамического изменения Contet Height of scroll view 
     }
 }
